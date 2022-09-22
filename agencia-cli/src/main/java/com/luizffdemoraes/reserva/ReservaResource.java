@@ -1,6 +1,7 @@
 package com.luizffdemoraes.reserva;
 
 import com.luizffdemoraes.cliente.Cliente;
+import com.luizffdemoraes.cliente.ClienteService;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.inject.Inject;
@@ -16,12 +17,17 @@ public class ReservaResource {
     @RestClient
     ReservaService reservaService;
 
+    @Inject
+    @RestClient
+    ClienteService clienteService;
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/newReserva")
     public String newReserva(){
-        Cliente cliente = Cliente.of(2, "");
+        Cliente cliente = clienteService.findById(2);
+        Reserva reserva = Reserva.of(cliente);
 
-        return reservaService.newReserva(cliente);
+        return reservaService.newReserva(reserva);
     }
 }
