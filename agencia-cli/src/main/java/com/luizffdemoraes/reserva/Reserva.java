@@ -4,21 +4,31 @@ import com.luizffdemoraes.cliente.Cliente;
 
 public class Reserva {
 
-    private Cliente cliente;
+    private long id;
+    private long idCliente;
 
-    public Reserva(Cliente cliente) {
-        this.cliente = cliente;
+    public Reserva(long id, long idCliente) {
+        this.id = id;
+        this.idCliente = idCliente;
     }
 
-    public static Reserva of(Cliente cliente){
-        return new Reserva(cliente);
+    public static Reserva of(long id, long idCliente){
+        return new Reserva(id, idCliente);
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public long getId() {
+        return id;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(long idCliente) {
+        this.idCliente = idCliente;
     }
 }

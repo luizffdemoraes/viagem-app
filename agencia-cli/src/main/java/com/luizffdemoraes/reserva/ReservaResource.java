@@ -25,8 +25,7 @@ public class ReservaResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/newReserva")
     public String newReserva(){
-        Cliente cliente = clienteService.findById(2);
-        Reserva reserva = Reserva.of(cliente);
+        Reserva reserva = Reserva.of(0, 2);
 
         return reservaService.newReserva(reserva);
     }
