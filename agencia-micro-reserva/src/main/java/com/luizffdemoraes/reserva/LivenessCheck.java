@@ -1,4 +1,4 @@
-package com.luizffdemoraes.cliente;
+package com.luizffdemoraes.reserva;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;

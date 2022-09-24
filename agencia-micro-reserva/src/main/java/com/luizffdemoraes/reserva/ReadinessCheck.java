@@ -1,4 +1,4 @@
-package com.luizffdemoraes.cliente;
+package com.luizffdemoraes.reserva;
 
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
@@ -9,7 +9,7 @@ public class ReadinessCheck implements HealthCheck {
 
     @Override
     public HealthCheckResponse call() {
-        if (Cliente.listAll() == null) {
+        if (Reserva.listAll() == null) {
             return  HealthCheckResponse.down("I'm not ready");
         } else {
             return HealthCheckResponse.up("I'm ready");
